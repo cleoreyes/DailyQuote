@@ -1,0 +1,51 @@
+<!-- Cleo Reyes -->
+<!-- index.html -->
+<!-- Purpose: HTML file for Positive Affirmations website project -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  gives the browser instructions on how to control the page's dimensions and scaling -->
+  <title>Daily Quotes</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- connects html file to css file -->
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Daily Quote</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <!-- The <blockquote> tag specifies a section that is quoted from another source,
+        in this case, other quotes that are not our own. -->
+        <span id="author">Loading...</span>
+        <!-- The <span> tag is an inline container used to mark up a part of a text, or a part of a document.
+        The <span> tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
+        The <span> tag is much like the <div> element, but <div> is a block-level element and <span> is an inline element -->
+        <div>
+            <button onclick="getquote(api_url);">New Quote</button>
+            <button onclick="tweet()"><img src="images/twitter.png">Tweet</button>
+        </div>
+        <div>
+            <h3>Don't ever give up husky! You can do it!</h3>
+        </div>
+    </div>
+    <script>
+        const quote = document.getElementById("quote");
+        const author = document.getElementById("author");
+        const api_url = "https://api.quotable.io/random";
+        async function getquote(url) {
+            const response = await fetch(url);
+            var data = await response.json();
+            quote.innerHTML = data.content;
+            author.innerHTML = data.author;
+        }
+        getquote(api_url);
+        function tweet() {
+            window.open(href="https://twitter.com/intent/tweet?text=Hello%20world" + quote.innerHTML 
+            + "- by " + author.innerHTML, "Tweet Window", "width=600, height=300");
+        }
+    
+    </script>
+
+</body>
+</html>

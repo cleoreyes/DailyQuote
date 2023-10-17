@@ -1,0 +1,121 @@
+/*
+Cleo Reyes
+styles.css
+Purpose: A CSS file to stylize Daily Affirmations website
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+/* Style for the whole project */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Style for body element */
+body { 
+    background: #4b2e83;
+    /* sets background of body to a light purple8 */
+}
+
+/* Syle for quote-box class */
+.quote-box {
+    background: #fff;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* This transformation is characterized by a two-dimensional vector. Its coordinates define how much the element moves in each direction. */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for h2 elements in quote-box class, overriding the ones above. */
+.quote-box h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Style for what comes after the h2 in the quote-box class creating a horizontal line */
+.quote-box h2::after {
+    content: '';
+    width: 200px;
+    height: 3px;
+    border-radius: 3px;
+    background: rgb(145, 123, 76);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+/* Style for blockquote elements in quote-box class being the quotes. */
+.quote-box blockquote{
+    font-size: 26px;
+    min-height: 110px;
+}
+
+/* Style for what comes before and after a blockquote element, creating quotation marks*/
+.quote-box blockquote::before, .quote-box blockquote::after {
+    content: '"';
+}
+
+/* Style for span element in quote-box class which is the quote author. */
+.quote-box span {
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+
+/* Style for before span creating a horizontal line */
+.quote-box span::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: rgb(145, 123, 76);
+    position: absolute;
+    top: 50%;
+    left: -30px;
+}
+
+/* Style div element centering it and giving it space. */
+.quote-box div {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style button element in quote-box class. */
+.quote-box button {
+    background: rgb(145, 123, 76);
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid rgb(145, 123, 76);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Style for images in button element in the quote-box class */
+.quote-box button img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Style for the second button element in the quote-box class */
+.quote-box button:nth-child(2) {
+    background: transparent;
+    color: #333;
+}
